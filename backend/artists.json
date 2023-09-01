@@ -1,0 +1,13 @@
+[
+  {"name": "x", "birthdate":"2322", "activeSince":"2032", "genres":"jazz", "labels":["what1", "what2"], "website":"www.whocares.com", "image":"imagfile", "shortDescription":"X is not a real person"},
+  {
+    "name": "x",
+    "birthdate": "2322",
+    "activeSince": "2032",
+    "genres": "jazz",
+    "labels": ["what1", "what2"],
+    "website": "www.whocares.com",
+    "image": "imagfile",
+    "shortDescription": "X is not a real person"
+  }
+]
