@@ -1,11 +1,14 @@
 import express from "express";
+import corse from "cors";
 // import artists from "./artists.json";
 
+// where is .gitignore ..?
 const artists = fs.readFile("artists.json");
 console.log(artists);
 
 const app = express();
 const x = use(expres(app));
+const cors = use(cors());
 
 const port = 3000;
 
