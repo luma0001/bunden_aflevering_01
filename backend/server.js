@@ -75,11 +75,37 @@ app.listen(port, (request, response) => {
     artist.website = body.website;
     artist.image = body.image;
     artist.shortDescription = body.shortDescription;
-
     request.send("PUT ARTIST");
   } else if (request.url === "/artists" && request.method === "delete") {
     const id = Number(request.params.id);
     const artist = artists.find((singer) => singer.id === id);
     request.send("DELETE ARTIST");
-  }
+    //favorites...
+  } else if (request.url === "/favorite" && request.method === "GET") {
+    console.log(`serveren køre på http://localhost:${port}`);
+    request.send("SHOW FAVORITE");
+  } else if (request.url === "/favorite" && request.method === "POST") {
+    const favorite = "INSERT_OBJECT";
+    artists.push(favorite);
+    request.send("POST FAVORITE");
+  } else if (request.url === "/favorite" && request.method === "PUT") {
+    const id = Number(request.params.id);
+    const favorite = artists.find((singer) => singer.id === id);
+    const body = response.body;
+
+    favorite.name = body.name;
+    favorite.birthdate = body.birthdate;
+    favorite.activeSince = body.activeSince;
+    favorite.genres = body.genres;
+    favorite.labels = body.labels;
+    favorite.website = body.website;
+    favorite.image = body.image;
+    favorite.shortDescription = body.shortDescription;
+
+    request.send("PUT FAVORITE");
+  } else if (request.url === "/favorite" && request.method === "delete") {
+    const id = Number(request.params.id);
+    const artist = artists.find((singer) => singer.id === id);
+    request.send("DELETE FAVORITE");
+}
 });
